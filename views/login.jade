@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/login.css')
+        link(rel='stylesheet', href='/stylesheets/public.css')
+    body
+        block content
+            .wrap
+                .login
+                    form
+                        input(type="text", placeholder="用户名", class="input")
+                        input(type="text", placeholder="密码", class="input")
+                    button(id="login", class="btn btn-primary btn-block btn-large")登录
