@@ -1,32 +1,4 @@
-let bbtn = document.getElementById('login');
-console.log(bbtn);
-window.onload = function () {
-    document.getElementById('login').onclick = function () {
-        console.log('点击登录');
-        let user = 'liyan';
-        let pwd = '123456';
-        window.ajax({
-            url: "/api/login?user='" + user + "'&pwd='" + pwd + "'",
-            method: "GET",
-            dataType: "JSON",
-            data: {
-                userTel: '18242052987',
-                codeType: '绑定手机'
-            },
-            headers: {
-                'Content-Type':'application/x-www-form-urlencoded'
-            },
-            success: (res) => {
-                alert(res.msg);
-                console.log(res);
-            },
-            error: (res) => {
-                console.log(res);
-            }
-        });
-    };
-};
-window.ajax = function ({url,method,dataType,data,headers,success,error}) {
+function ajax({url,method,dataType,data,headers,success,error}) {
     function createXHR() {
         if (typeof XMLHttpRequest !== 'undefined') {
             return new XMLHttpRequest();
@@ -73,4 +45,7 @@ window.ajax = function ({url,method,dataType,data,headers,success,error}) {
             }
         }
     };
+};
+module.exports = {
+    ajax
 };

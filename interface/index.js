@@ -25,6 +25,7 @@ router.get('/login', function(req, res, next) {
                     }
                     if (result.length == 1) {
                         res.send({ "success": true, "data": {}, "msg": "登录成功" });
+                        alert("登录成功！！");
                     } else {
                         res.send({ "success": false, "data": {}, "msg": "用户名或密码错误" });
                     }
